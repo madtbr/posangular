@@ -16,13 +16,21 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/auth.service';
-import { AuthGuard } from 'app/services/auth-guard.service';
+
+import { AuthGuard } from './services/auth-guard.service';
+import { VideosComponent } from './views/videos/videos.component';
+import { VideoaulasComponent } from './views/videos/videoaulas.component';
+import { ConsumodadosService } from './consumodados.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    VideosComponent,
+    VideoaulasComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,10 @@ import { AuthGuard } from 'app/services/auth-guard.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, ConsumodadosService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  
+}
